@@ -30,16 +30,14 @@ const HomeTemplate: React.FC = () => {
               </strong>{' '}
               today and join a community dedicated to making a difference.
             </div>
-            <div className="mt-5 mb-10 md:mb-0">
+            <div className="mt-5 mb-10 md:mb-0 xs:flex xs:justify-center">
               <Link href="/start">
-                <Button variant={ButtonVariant.Secondary}>
+                <Button variant={ButtonVariant.Primary}>
                   Start Fundraising
                 </Button>
               </Link>
               <Link href="/fundraisers" className="ml-2">
-                <Button variant={ButtonVariant.Secondary}>
-                  Our Fundraisers
-                </Button>
+                <Button variant={ButtonVariant.Primary}>Our Fundraisers</Button>
               </Link>
             </div>
           </div>
