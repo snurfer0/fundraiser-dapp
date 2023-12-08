@@ -41,7 +41,11 @@ const FundraisersTemplate: React.FC = () => {
   });
 
   const closeModal = () => {
-    setSelectedFundraiser(null);
+    const modalElement = modalRef.current;
+    if (modalElement && modalElement.close) {
+      modalElement.close();
+      setSelectedFundraiser(null);
+    }
   };
 
   const openModal = () => {

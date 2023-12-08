@@ -8,9 +8,9 @@ import { shortenEthereumAddress } from 'src/helpers/short.address';
 import { Button } from '../atoms';
 
 const WalletConnectButton = () => {
-  const { account, connect } = useWalletContext();
+  const { account, connectToWallet } = useWalletContext();
   return (
-    <Button onClick={connect} variant={ButtonVariant.Secondary}>
+    <Button onClick={connectToWallet} variant={ButtonVariant.Secondary}>
       <CreditCard />
       <span>{account ? shortenEthereumAddress(account) : 'Connect'}</span>
     </Button>
