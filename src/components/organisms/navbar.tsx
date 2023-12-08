@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-import { Menu } from 'react-feather';
+import { Box, Menu } from 'react-feather';
 import { NavLink } from 'src/types/navbar';
-import { WalletConnectButton } from '../molecules';
+import { ThemeController, WalletConnectButton } from '../molecules';
 
 interface Props {
   navLinks: NavLink[];
@@ -12,6 +12,10 @@ const NavBar: React.FC<Props> = ({ navLinks }) => {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
+        <Link href="/" className="btn btn-ghost text-xl hidden lg:flex">
+          <Box />
+          Fundraiser
+        </Link>
         <div className="dropdown">
           <button tabIndex={0} className="btn btn-ghost lg:hidden">
             <Menu />
@@ -35,6 +39,9 @@ const NavBar: React.FC<Props> = ({ navLinks }) => {
               <Link href={pathname}>{label}</Link>
             </li>
           ))}
+          <li>
+            <ThemeController />
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
