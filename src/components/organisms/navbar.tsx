@@ -31,7 +31,7 @@ const NavBar: React.FC<Props> = ({ navLinks }) => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navLinks.map(({ label, pathname }, index) => (
-            <li key={index}>
+            <li key={index} className="ml-2">
               <Link href={pathname}>{label}</Link>
             </li>
           ))}
