@@ -84,6 +84,10 @@ const FundraisersTemplate: React.FC = () => {
     };
   }, [fetchNextPage, hasNextPage, data]);
 
+  if (!data) {
+    return <Loading />;
+  }
+
   if (error) {
     return (
       <div className="text-center mt-20">
