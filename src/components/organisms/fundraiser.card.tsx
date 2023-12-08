@@ -32,10 +32,7 @@ const FundraiserCard = forwardRef<HTMLDivElement, Props>(
       2
     );
     return (
-      <div
-        ref={ref}
-        className="card xs:w-80 lg:w-96 bg-base-100 shadow-xl glass"
-      >
+      <div ref={ref} className="card xs:w-80 lg:w-96 bg-base-100 shadow-xl">
         <CardBanner imageUrl={imageUrl} />
         <Badge
           variant={
@@ -67,9 +64,11 @@ const FundraiserCard = forwardRef<HTMLDivElement, Props>(
           </div>
           <div className="card-actions justify-between mt-2 ">
             <Button variant={ButtonVariant.Primary}>Details</Button>
-            <Link href={url} target="_blank" rel="noopener noreferrer">
-              <Button variant={ButtonVariant.Primary}>Website</Button>
-            </Link>
+            <Button variant={ButtonVariant.Primary}>
+              <Link href={url} target="_blank" rel="noopener noreferrer">
+                Website{' '}
+              </Link>
+            </Button>
             <Button variant={ButtonVariant.Accent} onClick={openDonationForm}>
               <Heart />
               Donate
