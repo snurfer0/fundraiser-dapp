@@ -9,7 +9,7 @@ const GithubButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       href={PackageJson.repository}
-      style={{ position: 'fixed', bottom: '40px', right: '40px' }}
+      className="fixed bottom-10 right-10 w-8 h-8"
     >
       <GitHub />
     </Link>
