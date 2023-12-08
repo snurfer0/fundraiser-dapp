@@ -10,10 +10,10 @@ const ThemeController: React.FC = () => {
   }, []);
 
   return (
-    <label className="swap swap-rotate fixed bottom-10 left-10">
+    <label className="swap swap-rotate">
       <input value="pastel" type="checkbox" className="theme-controller" />
-      <Sun className="swap-on w-8 h-8" />
-      <Moon className="swap-off w-8 h-8" />
+      <Sun className="swap-on w-6 h-6" />
+      <Moon className="swap-off w-6  h-6" />
     </label>
   );
 };

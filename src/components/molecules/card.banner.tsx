@@ -21,7 +21,7 @@ const CardBanner: React.FC<Props> = ({ imageUrl }) => {
   };
 
   return (
-    <figure style={{ position: 'relative', width: '384px', height: '250px' }}>
+    <figure className="relative w-full h-[250px]">
       <Image
         src={currentImageUrl}
         alt="Shoes"
