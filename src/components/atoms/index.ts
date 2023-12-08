@@ -9,3 +9,4 @@ export { default as Radio } from './radio';
 export { default as Grid } from './grid';
 export { default as ProgressBar } from './progress.bar';
 export { default as Badge } from './badge';
+export { default as Range } from './range';
