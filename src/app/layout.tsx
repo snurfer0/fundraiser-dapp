@@ -27,8 +27,6 @@ export default function RootLayout({
         <Providers>
           <NavBar navLinks={NAV_LINKS} />
           {children}
-          <ThemeController />
-          <GithubButton />
           <Toaster />
         </Providers>
       </body>
