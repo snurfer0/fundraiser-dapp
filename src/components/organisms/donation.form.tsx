@@ -46,17 +46,17 @@ const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
             handleSubmit();
           }}
         >
-          <div className="flex flex-wrap -mx-1 mb-4">
-            <div className="px-1 w-11/12 sm:w-1/2 mb-4 sm:mb-0 mx-auto">
+          <div className="">
+            <div>
               <Input
                 disabled
                 name="url"
                 type={InputType.text}
                 label="Fundraiser address"
-                value={shortenEthereumAddress(values.fundraiserAddress)}
+                value={shortenEthereumAddress(values.fundraiserAddress, 12, 11)}
               />
             </div>
-            <div className="px-1 w-11/12 sm:w-1/2 mb-4 sm:mb-0 mx-auto">
+            <div>
               <Input
                 name="ethAmount"
                 label="Eth Amount"
