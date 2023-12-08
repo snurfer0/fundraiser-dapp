@@ -1,6 +1,6 @@
-btn-primary
-btn-secondary
-btn-neutral
-btn-accent
-btn-ghost
-btn-link
+["btn-primary",
+"btn-secondary",
+"btn-neutral",
+"btn-accent",
+"btn-ghost",
+"btn-link"]
