@@ -5,7 +5,8 @@ import { useWallet } from '../hooks/use.wallet';
 
 interface WalletContextValue {
   account: string | null;
-  connect: () => Promise<void>;
+  balance: number;
+  connectToWallet: () => Promise<void>;
 }
 
 const WalletContext = createContext<WalletContextValue | undefined>(undefined);
@@ -15,10 +16,10 @@ interface WalletProviderProps {
 }
 
 export const WalletProvider: React.FC<WalletProviderProps> = ({ children }) => {
-  const [state, connect] = useWallet();
+  const { account, balance, connectToWallet } = useWallet();
 
   return (
-    <WalletContext.Provider value={{ account: state.account, connect }}>
+    <WalletContext.Provider value={{ account, balance, connectToWallet }}>
       {children}
     </WalletContext.Provider>
   );

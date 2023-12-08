@@ -1,12 +1,16 @@
+import { BrowserProvider, formatEther } from 'ethers';
 import { useState, useCallback, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-interface WalletState {
+interface WalletOperators {
   account: string | null;
+  balance: number;
+  connectToWallet: () => Promise<void>;
 }
 
-export const useWallet = (): [WalletState, () => Promise<void>] => {
+export const useWallet = (): WalletOperators => {
   const [account, setAccount] = useState<string | null>(null);
+  const [balance, setBalance] = useState<number>(0);
 
   const connectToWallet = useCallback(async () => {
     if (
@@ -36,6 +40,8 @@ export const useWallet = (): [WalletState, () => Promise<void>] => {
       });
       if (accounts && accounts[0]) {
         setAccount(accounts[0]);
+        const balance = await getBalance(accounts[0]);
+        setBalance(balance);
       } else {
         setAccount(null);
       }
@@ -67,5 +73,21 @@ export const useWallet = (): [WalletState, () => Promise<void>] => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return [{ account }, connectToWallet];
+  const getBalance = async (account: string): Promise<number> => {
+    try {
+      if (!window.ethereum) return 0;
+      const provider = new BrowserProvider(window.ethereum);
+
+      // Query the balance
+      const balance = await provider.getBalance(account);
+
+      // Convert the balance from Wei to Ether
+      const balanceInEth = formatEther(balance);
+      return Number(balanceInEth);
+    } catch (error) {
+      return 0;
+    }
+  };
+
+  return { account, balance, connectToWallet };
 };
