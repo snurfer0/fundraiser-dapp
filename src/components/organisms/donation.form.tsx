@@ -3,12 +3,13 @@
 import { Formik, FormikHelpers } from 'formik';
 import React, { ChangeEvent, FormEvent } from 'react';
 import toast from 'react-hot-toast';
+import { useWalletContext } from 'src/contexts/wallet.context';
 import { ButtonType } from 'src/enums/button.type.enum';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { InputType } from 'src/enums/input.type.enum';
 import { shortenEthereumAddress } from 'src/helpers/short.address';
 import { DonationValues, donationSchema } from 'src/schemas/donation.schema';
-import { Button, Input } from '../atoms';
+import { Button, Input, Range } from '../atoms';
 
 interface Props {
   fundraiserAddress: string;
@@ -16,6 +17,7 @@ interface Props {
 }
 
 const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
+  const { balance } = useWalletContext();
   const handleFormSubmit = async (
     values: DonationValues,
     { setSubmitting }: FormikHelpers<DonationValues>
@@ -56,14 +58,18 @@ const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
                 value={shortenEthereumAddress(values.fundraiserAddress, 12, 11)}
               />
             </div>
-            <div>
-              <Input
+            <h4 className="w-full flex justify-center mt-3 text-xl text-bold">
+              {values.ethAmount} Eth
+            </h4>
+            <div className="mt-5">
+              <Range
                 name="ethAmount"
                 label="Eth Amount"
-                placeholder="Eth Amount"
-                disabled={isSubmitting}
-                type={InputType.number}
                 value={values.ethAmount}
+                min={0}
+                max={balance}
+                disabled={isSubmitting}
+                step={0.01}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setValues({ ...values, ethAmount: Number(e.target.value) })
                 }
