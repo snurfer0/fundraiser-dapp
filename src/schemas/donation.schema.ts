@@ -5,7 +5,7 @@ export const donationSchema = object({
   ethAmount: number()
     .moreThan(0)
     .required('Please ether the amount in ETH')
-    .default(1),
+    .default(0),
   fundraiserAddress: string()
     .test({
       test(value, ctx) {
