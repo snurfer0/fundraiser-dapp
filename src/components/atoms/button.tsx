@@ -25,7 +25,7 @@ const Button: React.FC<Props> = ({
   onClick,
   type = ButtonType.button,
 }) => {
-  const classNameFull = `btn ${variant} ${className}`;
+  const classNameFull = `btn font-normal ${variant} ${className}`;
   return (
     <button onClick={onClick} type={type} className={classNameFull}>
       {loading ? <Loading fullScreen={false} /> : children}
