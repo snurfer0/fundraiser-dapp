@@ -1,3 +1,4 @@
+import PackageJson from '../package.json';
 import { NavLink } from './types/navbar';
 
 export const NAV_LINKS: NavLink[] = [
@@ -14,8 +15,8 @@ export const NAV_LINKS: NavLink[] = [
     pathname: '/start',
   },
   {
-    label: 'About',
-    pathname: '/about',
+    label: 'Github',
+    pathname: PackageJson.repository,
   },
 ];
 
