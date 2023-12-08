@@ -8,7 +8,7 @@ import { Button } from '../atoms';
 const HomeTemplate: React.FC = () => {
   return (
     <div className="mt-20 select-none px-4 md:px-8">
-      <h1 className="text-center text-3xl md:text-5xl font-bold my-4">
+      <h1 className="text-center text-3xl md:text-5xl font-bold">
         Embark on Your Fundraising Journey
       </h1>
       <div className="flex justify-center mx-auto md:w-[70%] flex-col lg:flex-row mt-10">
@@ -30,7 +30,7 @@ const HomeTemplate: React.FC = () => {
               </strong>{' '}
               today and join a community dedicated to making a difference.
             </div>
-            <div className="mt-5 mb-10 md:mb-0 xs:flex xs:justify-center">
+            <div className="mt-5 mb-10 md:mb-0">
               <Link href="/start">
                 <Button variant={ButtonVariant.Primary}>
                   Start Fundraising
