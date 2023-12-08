@@ -14,10 +14,11 @@
 2. Navigate to the project folder: `cd fundraiser-dapp`
 3. Install dependencies: `npm install`
 4. Compile solidity smart contracts: `npm run truffle:compile`
-5. Generate typescript types: `npm run typechain:generate`
-6. Run tests: `npm run truffle:test`
-7. Set up the environment variables (next section)
-8. Start Next.js App: `npm run next:dev`
+5. Generate typescript types: `npm run smart-contracts:typechain:generate`
+6. Generate typescript types: `npm run app:typechain:generate`
+7. Run tests: `npm run truffle:test`
+8. Set up the environment variables (next section)
+9. Start Next.js App: `npm run next:dev`
 
 ## 🌈 Environtent variables
 
