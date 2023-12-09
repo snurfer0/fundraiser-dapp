@@ -22,7 +22,7 @@ const FundraisersTemplate: React.FC = () => {
   const { fetchFundraisers } = useFundraiserFactory();
 
   const [selectedFundraiser, setSelectedFundraiser] = useState<string | null>(
-    null
+    null,
   );
 
   const {
@@ -73,7 +73,7 @@ const FundraisersTemplate: React.FC = () => {
           await fetchNextPage();
         }
       },
-      { threshold: 1 }
+      { threshold: 1 },
     );
 
     const currentObserverTarget = observerTarget.current;
@@ -127,22 +127,23 @@ const FundraisersTemplate: React.FC = () => {
         <div className="w-full flex justify-center mt-20">
           {data && (
             <Grid>
-              {data.pages.flatMap((page, pageIndex, array) =>
-                page?.data.map((fundraiser, itemIndex) => {
-                  const isLastRowFirstItem =
-                    pageIndex === array.length - 1 && itemIndex === 0;
-                  return (
-                    <FundraiserCard
-                      key={fundraiser.address}
-                      ref={isLastRowFirstItem ? observerTarget : null}
-                      fundraiser={fundraiser}
-                      openDonationForm={() => {
-                        setSelectedFundraiser(fundraiser.address);
-                        openModal();
-                      }}
-                    />
-                  );
-                })
+              {data.pages.flatMap(
+                (page, pageIndex, array) =>
+                  page?.data.map((fundraiser, itemIndex) => {
+                    const isLastRowFirstItem =
+                      pageIndex === array.length - 1 && itemIndex === 0;
+                    return (
+                      <FundraiserCard
+                        key={fundraiser.address}
+                        ref={isLastRowFirstItem ? observerTarget : null}
+                        fundraiser={fundraiser}
+                        openDonationForm={() => {
+                          setSelectedFundraiser(fundraiser.address);
+                          openModal();
+                        }}
+                      />
+                    );
+                  }),
               )}
             </Grid>
           )}

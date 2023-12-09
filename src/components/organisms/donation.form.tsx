@@ -3,7 +3,7 @@
 import { Formik, FormikHelpers } from 'formik';
 import React, { ChangeEvent, FormEvent } from 'react';
 import toast from 'react-hot-toast';
-import { useWalletContext } from 'src/contexts/wallet.context';
+import { useAccount, useBalance } from 'wagmi';
 import { ButtonType } from 'src/enums/button.type.enum';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { InputType } from 'src/enums/input.type.enum';
@@ -17,10 +17,12 @@ interface Props {
 }
 
 const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
-  const { balance } = useWalletContext();
+  const { address } = useAccount();
+  const { data: balanceData } = useBalance({ address });
+
   const handleFormSubmit = async (
     values: DonationValues,
-    { setSubmitting }: FormikHelpers<DonationValues>
+    { setSubmitting }: FormikHelpers<DonationValues>,
   ) => {
     try {
       const validatedValues = donationSchema.cast(values);
@@ -67,7 +69,7 @@ const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
                 label="Eth Amount"
                 value={values.ethAmount}
                 min={0}
-                max={balance}
+                max={Number(balanceData?.formatted)}
                 disabled={isSubmitting}
                 step={0.01}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>

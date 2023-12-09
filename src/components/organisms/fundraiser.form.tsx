@@ -21,7 +21,7 @@ const FundraiserForm: React.FC<Props> = ({ onSubmit }) => {
 
   const handleFormSubmit = async (
     values: FundraiserValues,
-    { setSubmitting }: FormikHelpers<FundraiserValues>
+    { setSubmitting }: FormikHelpers<FundraiserValues>,
   ) => {
     try {
       const validatedValues = fundraiserSchema.cast(values);

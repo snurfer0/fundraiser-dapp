@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
 
     const { limit = 0, offset = 0 } = Object.fromEntries(
-      searchParams.entries()
+      searchParams.entries(),
     );
 
     // Get the base URL from the environment
@@ -37,7 +37,7 @@ export async function GET(request: Request) {
 
     const fundraiserFactory = FundraiserFactory__factory.connect(
       config.fundraiserFactoryAddress,
-      provider
+      provider,
     );
 
     // Get total fundraisers
@@ -58,7 +58,7 @@ export async function GET(request: Request) {
         },
         {
           status: 200,
-        }
+        },
       );
     }
 
@@ -90,7 +90,7 @@ export async function GET(request: Request) {
           totalDonations: Number(formatEther(totalDonations)),
           donationsCount: Number(donationsCount),
         };
-      })
+      }),
     );
 
     const paginatedData: Paginated<FundraiserDto> = {
@@ -111,7 +111,7 @@ export async function GET(request: Request) {
         {
           error: error.message,
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
     return NextResponse.json(error, { status: 500 });

@@ -29,7 +29,7 @@ const FundraiserCard = forwardRef<HTMLDivElement, Props>(
       goal = 0,
     } = fundraiser;
     const percentage = (goal > 0 ? (totalDonations / goal) * 100 : 0).toFixed(
-      2
+      2,
     );
     return (
       <div ref={ref} className="card xs:w-80 lg:w-96 bg-base-100 shadow-xl">
@@ -77,7 +77,7 @@ const FundraiserCard = forwardRef<HTMLDivElement, Props>(
         </CardBody>
       </div>
     );
-  }
+  },
 );
 
 export default FundraiserCard;

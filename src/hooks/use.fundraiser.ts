@@ -35,7 +35,7 @@ const useFundraiser = (): Readonly<FundraiserOperators> => {
 
       const fundraiserFactory = Fundraiser__factory.connect(
         fundraiserAddress,
-        signer
+        signer,
       );
 
       const tx = await fundraiserFactory.donate({

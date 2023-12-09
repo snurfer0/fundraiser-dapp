@@ -25,6 +25,11 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "paths": {
+      "public/*": [
+        "public/*"
+      ],
+    },
     "plugins": [
       {
         "name": "next"
@@ -35,7 +40,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/components/organisms/account.tsx"
   ],
   "exclude": [
     "node_modules",

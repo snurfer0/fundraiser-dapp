@@ -25,7 +25,7 @@ contract('Fundraiser', accounts => {
       description,
       goal,
       beneficiary,
-      owner
+      owner,
     );
   });
 
@@ -70,7 +70,7 @@ contract('Fundraiser', accounts => {
       assert.equal(
         actualBeneficiary,
         newBeneficiary,
-        'beneficiaries should match'
+        'beneficiaries should match',
       );
     });
 
@@ -84,7 +84,7 @@ contract('Fundraiser', accounts => {
           const actualError = err.message;
           assert(
             actualError.includes(expectedError),
-            'should not be permitted'
+            'should not be permitted',
           );
         }
       }
@@ -105,7 +105,7 @@ contract('Fundraiser', accounts => {
         assert.equal(
           1,
           newDonationsCount.sub(currentDonationsCount).toNumber(),
-          'myDonationsCount should increment by 1'
+          'myDonationsCount should increment by 1',
         );
       });
 
@@ -133,7 +133,7 @@ contract('Fundraiser', accounts => {
         assert.equal(
           1,
           newDonationsCount.sub(currentDonationsCount).toNumber(),
-          'donationsCount should increment by 1'
+          'donationsCount should increment by 1',
         );
       });
 
@@ -164,7 +164,7 @@ contract('Fundraiser', accounts => {
               const actualError = err.message;
               assert(
                 actualError.includes(expectedError),
-                'should not be permitted'
+                'should not be permitted',
               );
             }
           }
@@ -181,29 +181,29 @@ contract('Fundraiser', accounts => {
 
         it('transfers balance to beneficiary', async () => {
           const currentContractBalance = await web3.eth.getBalance(
-            fundraiser.address
+            fundraiser.address,
           );
           const currentBeneficiaryBalance = BigInt(
-            await web3.eth.getBalance(beneficiary)
+            await web3.eth.getBalance(beneficiary),
           );
           await fundraiser.withdraw({ from: owner });
           const newContractBalance = await web3.eth.getBalance(
-            fundraiser.address
+            fundraiser.address,
           );
           const newBeneficiaryBalance = BigInt(
-            await web3.eth.getBalance(beneficiary)
+            await web3.eth.getBalance(beneficiary),
           );
           const beneficiaryDifference =
             newBeneficiaryBalance - currentBeneficiaryBalance;
           assert.equal(
             Number(newContractBalance),
             0,
-            'contract should have a 0 balance'
+            'contract should have a 0 balance',
           );
           assert.equal(
             beneficiaryDifference.toString(),
             currentContractBalance,
-            'beneficiary should receive all the funds'
+            'beneficiary should receive all the funds',
           );
         });
 
@@ -230,7 +230,7 @@ contract('Fundraiser', accounts => {
           assert.equal(
             diff.toString(),
             value,
-            'difference should match the donation value'
+            'difference should match the donation value',
           );
         });
 
@@ -245,7 +245,7 @@ contract('Fundraiser', accounts => {
           assert.equal(
             1,
             newDonationsCount.sub(currentDonationsCount).toNumber(),
-            'donationsCount should increment by 1'
+            'donationsCount should increment by 1',
           );
         });
       });
