@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { Toaster } from 'react-hot-toast';
 import { NavBar } from 'src/components/organisms';
 import { NAV_LINKS } from 'src/constants';
-import Providers from 'src/utils/provider';
+import Providers from 'src/utils/providers';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
