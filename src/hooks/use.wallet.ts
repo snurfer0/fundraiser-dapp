@@ -66,7 +66,7 @@ export const useWallet = (): WalletOperators => {
       if (window.ethereum) {
         void window.ethereum.removeListener(
           'accountsChanged',
-          handleAccountsChanged
+          handleAccountsChanged,
         );
       }
     };

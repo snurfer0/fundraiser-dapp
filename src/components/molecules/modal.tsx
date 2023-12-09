@@ -30,7 +30,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(
         </form>
       </dialog>
     );
-  }
+  },
 );
 
 export default Modal;

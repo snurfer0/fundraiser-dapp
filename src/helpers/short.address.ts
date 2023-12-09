@@ -7,7 +7,7 @@
 export function shortenEthereumAddress(
   address: string,
   prefixLength = 2,
-  suffixLength = 2
+  suffixLength = 2,
 ): string {
   if (address.length <= prefixLength + suffixLength + 2) {
     // Address is too short to shorten.

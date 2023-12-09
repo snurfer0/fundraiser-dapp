@@ -18,7 +18,7 @@ type FundraiserFactoryOperators = {
   fetchFundraisersForOwner: (
     owner: string,
     limit: number,
-    offset: number
+    offset: number,
   ) => Promise<Paginated<FundraiserDto> | null>;
 };
 
@@ -31,7 +31,7 @@ const useFundraiserFactory = (): Readonly<FundraiserFactoryOperators> => {
    * @param values
    */
   const startFundraiser = async (
-    values: FundraiserValues
+    values: FundraiserValues,
   ): Promise<boolean> => {
     try {
       if (!window.ethereum) return false;
@@ -39,7 +39,7 @@ const useFundraiserFactory = (): Readonly<FundraiserFactoryOperators> => {
       const signer = await provider.getSigner();
       const fundraiserFactory = FundraiserFactory__factory.connect(
         config.fundraiserFactoryAddress,
-        signer
+        signer,
       );
       const { name, url, imageURL, description, goal, beneficiary } = values;
       const tx = await fundraiserFactory.createFundraiser(
@@ -48,7 +48,7 @@ const useFundraiserFactory = (): Readonly<FundraiserFactoryOperators> => {
         imageURL,
         description,
         goal,
-        beneficiary
+        beneficiary,
       );
       const receipt = await tx.wait();
       return receipt?.status === 1;
@@ -90,7 +90,7 @@ const useFundraiserFactory = (): Readonly<FundraiserFactoryOperators> => {
   const fetchFundraisersForOwner = async (
     owner: string,
     offset: number,
-    limit: number
+    limit: number,
   ): Promise<Paginated<FundraiserDto> | null> => {
     try {
       const response = await axios.get<

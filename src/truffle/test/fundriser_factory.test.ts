@@ -26,14 +26,14 @@ contract('FundraiserFactory', accounts => {
       imageURL,
       description,
       goal,
-      beneficiary
+      beneficiary,
     );
     const newFundraisersCount = await fundraiserFactory.fundraisersCount();
 
     assert.equal(
       newFundraisersCount.sub(currentFundraisersCount).toNumber(),
       1,
-      'should increment by 1'
+      'should increment by 1',
     );
   });
 
@@ -45,7 +45,7 @@ contract('FundraiserFactory', accounts => {
       imageURL,
       description,
       goal,
-      beneficiary
+      beneficiary,
     );
     const expectedEvent = 'FundraiserCreated';
     const actualEvent = tx.logs[0].event;
@@ -57,7 +57,7 @@ contract('FundraiserFactory: fundrisers', accounts => {
   async function addFundraisers(
     factory: FundraiserFactoryInstance,
     count: number,
-    accounts: string[]
+    accounts: string[],
   ): Promise<void> {
     const name = 'Beneficiary';
     const goal = 100;
@@ -72,14 +72,14 @@ contract('FundraiserFactory: fundrisers', accounts => {
         `${lowerCaseName}${i}.png`,
         `Description for ${name} ${i}`,
         goal,
-        beneficiary
+        beneficiary,
       );
     }
   }
 
   async function createFundraiserFactory(
     fundraiserCount: number,
-    accounts: string[]
+    accounts: string[],
   ): Promise<FundraiserFactoryInstance> {
     const factory = await FundraiserFactoryContract.new();
     await addFundraisers(factory, fundraiserCount, accounts);

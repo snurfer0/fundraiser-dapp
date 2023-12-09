@@ -135,7 +135,6 @@ module.exports = {
         'dist',
         'build',
         'public/**',
-        'next-env.d.ts',
-        'libs/types/*',
+        'next-env.d.ts'
     ],
 };

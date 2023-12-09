@@ -20,7 +20,7 @@ const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
   const { balance } = useWalletContext();
   const handleFormSubmit = async (
     values: DonationValues,
-    { setSubmitting }: FormikHelpers<DonationValues>
+    { setSubmitting }: FormikHelpers<DonationValues>,
   ) => {
     try {
       const validatedValues = donationSchema.cast(values);
