@@ -18,7 +18,7 @@
     "app:typechain:generate": "npx typechain --target ethers-v6 --out-dir src/types/typechain-dir-out/app 'src/truffle/build/*.json'",
     "next:dev": "next dev",
     "next:build": "next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "build": "truffle compile &&  npm run smart-contracts:typechain:generate && npm run app:typechain:generate && npm run next:build"
   },
   "dependencies": {
