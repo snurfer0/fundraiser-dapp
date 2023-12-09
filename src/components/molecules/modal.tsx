@@ -20,9 +20,9 @@ const Modal = forwardRef<HTMLDialogElement, Props>(
               ✕
             </button>
           </form>
-          {title && <h3 className="font-bold text-lg">{title}</h3>}
+          {title && <h3 className="font-bold text-lg mb-4">{title}</h3>}
           {description && <div className="py-4">{description}</div>}
-          <div className="py-4">{children}</div>
+          <div>{children}</div>
           <div className="modal-action">{actions}</div>
         </div>
         <form method="dialog" className="modal-backdrop">
