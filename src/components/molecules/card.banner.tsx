@@ -24,7 +24,7 @@ const CardBanner: React.FC<Props> = ({ imageUrl }) => {
     <figure className="relative w-full h-[250px]">
       <Image
         src={currentImageUrl}
-        alt="Shoes"
+        alt="banner"
         layout="fill"
         objectFit="cover"
         onError={handleImageError}
