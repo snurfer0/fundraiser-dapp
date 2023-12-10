@@ -22,5 +22,11 @@ module.exports = {
     "btn-accent",
     "btn-ghost",
     "btn-link",
+    "badge-primary",
+    "badge-secondary",
+    "badge-neutral",
+    "badge-accent",
+    "badge-ghost",
+    "badge-link",
   ],
 };
