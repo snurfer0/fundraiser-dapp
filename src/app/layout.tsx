@@ -2,7 +2,7 @@ import 'src/styles/global.css';
 import { Open_Sans } from 'next/font/google';
 import Head from 'next/head';
 import { Toaster } from 'react-hot-toast';
-import { NavBar } from 'src/components/organisms';
+import { Footer, NavBar } from 'src/components/organisms';
 import { NAV_LINKS } from 'src/constants';
 import Providers from 'src/utils/providers';
 
@@ -22,11 +22,12 @@ export default function RootLayout({
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <body>
+      <body className="bg-base-200">
         <Providers>
           <NavBar navLinks={NAV_LINKS} />
           {children}
           <Toaster />
+          <Footer />
         </Providers>
       </body>
     </html>
