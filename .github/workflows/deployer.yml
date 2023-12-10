@@ -50,6 +50,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_REGISTRY_HOST }}/${{ env.IMAGE_NAME }}:latest
 
-      - name: "Delete .env file used by Nest at build time"
+      - name: "Delete .env file used at build time"
         run: |
           rm .env
