@@ -25,7 +25,6 @@ const CardBanner: React.FC<Props> = ({ imageUrl }) => {
       <Image
         src={currentImageUrl}
         alt="banner"
-        unoptimized
         layout="fill"
         objectFit="cover"
         onError={handleImageError}
