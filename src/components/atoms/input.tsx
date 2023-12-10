@@ -10,6 +10,7 @@ interface Props {
   disabled?: boolean;
   name?: string;
   error?: string;
+  info?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -21,10 +22,11 @@ const Input: React.FC<Props> = ({
   value,
   name,
   error,
+  info,
   onChange,
 }) => {
   return (
-    <Label htmlFor={name} topLeft={label} bottomLeft={error}>
+    <Label htmlFor={name} topLeft={label} error={error} info={info}>
       <input
         type={type}
         name={name}

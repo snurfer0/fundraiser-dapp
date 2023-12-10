@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React, { forwardRef } from 'react';
 import { FiHeart } from 'react-icons/fi';
-import { PiGlobeLight } from 'react-icons/pi';
 import { BadgeVariant } from 'src/enums/badge.variant.enum';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { shortenEthereumAddress } from 'src/helpers/short.address';
@@ -47,6 +46,11 @@ const FundraiserCard = forwardRef<HTMLDivElement, Props>(
           title={shortenString(name, 27)}
           description={shortenString(description, 70)}
         >
+          <div className="divider">
+            <Link href={url} className="text-sm">
+              Go to website
+            </Link>
+          </div>
           <div className="flex justify-between text-sm">
             <div>Donations</div>
             <div>{donationsCount}</div>

@@ -22,7 +22,7 @@ const FileInput: React.FC<Props> = ({
   onChange,
 }) => {
   return (
-    <Label topLeft={label} bottomLeft={error}>
+    <Label topLeft={label} error={error}>
       <input
         type={InputType.file}
         name={name}

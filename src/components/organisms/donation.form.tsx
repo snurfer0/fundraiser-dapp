@@ -7,7 +7,6 @@ import { useAccount, useBalance } from 'wagmi';
 import { ButtonType } from 'src/enums/button.type.enum';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { InputType } from 'src/enums/input.type.enum';
-import { shortenEthereumAddress } from 'src/helpers/short.address';
 import { DonationValues, donationSchema } from 'src/schemas/donation.schema';
 import { Button, Input, Range } from '../atoms';
 
@@ -56,8 +55,9 @@ const DonationForm: React.FC<Props> = ({ fundraiserAddress, onSubmit }) => {
                 disabled
                 name="url"
                 type={InputType.text}
+                info="Send ETH to this address directly to make an anonymous donation"
                 label="Fundraiser address"
-                value={shortenEthereumAddress(values.fundraiserAddress, 12, 11)}
+                value={values.fundraiserAddress}
               />
             </div>
             <h4 className="w-full flex justify-center mt-3 text-xl text-bold">

@@ -32,7 +32,7 @@ const TextArea: React.FC<Props> = ({
     <Label
       htmlFor={name}
       topLeft={label}
-      bottomLeft={error}
+      error={error}
       topRight={`${String(value).length}/${maxLength}`}
     >
       <textarea
