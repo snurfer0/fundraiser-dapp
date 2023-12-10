@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Andrei",
   "repository": "https://github.com/snurfer0/fundraiser-dapp",
+  "linkedIn": "",
   "private": true,
   "release": {
     "branches": [
@@ -42,8 +43,8 @@
     "postcss": "^8.4.32",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-feather": "^2.0.10",
     "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.12.0",
     "tailwindcss": "^3.3.6",
     "theme-change": "^2.5.0",
     "truffle": "^5.5.19",
