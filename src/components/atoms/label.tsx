@@ -1,9 +1,10 @@
 import React from 'react';
 
 interface Props {
-  topLeft?: string | number;
-  topRight?: string | number;
-  bottomLeft?: string | number;
+  topLeft?: string;
+  topRight?: string;
+  error?: string;
+  info?: string;
   htmlFor?: string;
   className?: string;
   children?: React.ReactNode;
@@ -12,7 +13,8 @@ interface Props {
 const Label: React.FC<Props> = ({
   topLeft,
   topRight,
-  bottomLeft,
+  error,
+  info,
   htmlFor,
   className = '',
   children,
@@ -25,7 +27,11 @@ const Label: React.FC<Props> = ({
       </div>
       {children}
       <div className="label">
-        <span className="label-text-alt text-error">{bottomLeft}</span>
+        {error ? (
+          <span className="label-text-alt text-error">{error}</span>
+        ) : (
+          <span className="label-text-alt text-info">{info}</span>
+        )}
       </div>
     </label>
   );
