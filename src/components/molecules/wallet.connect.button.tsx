@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { CreditCard } from 'react-feather';
+import { PiWalletFill } from 'react-icons/pi';
 import {
   useAccount,
   useBalance,
@@ -52,7 +52,7 @@ const WalletConnectButton = () => {
   return (
     <>
       <Button onClick={onClick} variant={ButtonVariant.Secondary}>
-        <CreditCard />
+        <PiWalletFill size={20} />
         <span>{address ? shortenEthereumAddress(address) : 'Connect'}</span>
       </Button>
       {address && isConnected && (

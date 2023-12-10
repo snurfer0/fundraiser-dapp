@@ -1,6 +1,9 @@
 import PackageJson from '../package.json';
 import { NavLink } from './types/navbar';
 
+export const linkedIn =
+  'https://www.linkedin.com/in/andrei-balanuta-a28970176/';
+
 export const NAV_LINKS: NavLink[] = [
   {
     label: 'Home',
