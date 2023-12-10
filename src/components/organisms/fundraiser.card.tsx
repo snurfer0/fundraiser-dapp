@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { forwardRef } from 'react';
-import { Heart } from 'react-feather';
+import { FiHeart } from 'react-icons/fi';
+import { PiGlobeLight } from 'react-icons/pi';
 import { BadgeVariant } from 'src/enums/badge.variant.enum';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { shortenEthereumAddress } from 'src/helpers/short.address';
@@ -8,7 +9,6 @@ import { shortenString } from 'src/helpers/short.text';
 import { FundraiserDto } from 'src/types/fundraiserDto';
 import { Badge, Button, ProgressBar } from '../atoms';
 import { CardBanner, CardBody } from '../molecules';
-
 interface Props {
   fundraiser: FundraiserDto;
   ref?: React.Ref<HTMLDivElement>;
@@ -62,16 +62,13 @@ const FundraiserCard = forwardRef<HTMLDivElement, Props>(
           <div className="flex justify-center items-center">
             <ProgressBar value={totalDonations} max={goal} />
           </div>
-          <div className="card-actions justify-between mt-2 ">
-            <Button variant={ButtonVariant.Primary}>Details</Button>
-            <Button variant={ButtonVariant.Primary}>
-              <Link href={url} target="_blank" rel="noopener noreferrer">
-                Website{' '}
-              </Link>
-            </Button>
-            <Button variant={ButtonVariant.Accent} onClick={openDonationForm}>
-              <Heart />
-              Donate
+          <div className="card-actions justify-end mt-2 space-x-2 w-full">
+            <Button
+              variant={ButtonVariant.Accent}
+              onClick={openDonationForm}
+              className="icon-button w-full"
+            >
+              Donate <FiHeart size={25} strokeWidth={1} />
             </Button>
           </div>
         </CardBody>

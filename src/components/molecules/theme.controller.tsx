@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Moon, Sun } from 'react-feather';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { themeChange } from 'theme-change';
 
 const ThemeController: React.FC = () => {
@@ -12,8 +12,8 @@ const ThemeController: React.FC = () => {
   return (
     <label className="swap swap-rotate">
       <input value="pastel" type="checkbox" className="theme-controller" />
-      <Sun className="swap-on w-6 h-6" />
-      <Moon className="swap-off w-6 h-6" />
+      <FiSun className="swap-on w-6 h-6" />
+      <FiMoon className="swap-off w-6 h-6" />
     </label>
   );
 };

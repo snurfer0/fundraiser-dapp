@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import { Clipboard, DollarSign, Link, LogOut } from 'react-feather';
 import toast from 'react-hot-toast';
+import { FiClipboard, FiDollarSign, FiLink, FiLogOut } from 'react-icons/fi';
 import AvatarImage from 'public/images/avatar.png';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { copyStringToClipboard } from 'src/helpers/copy.to.clipboard';
@@ -50,14 +50,14 @@ const Account: React.FC<Props> = ({
             className="flex items-center ml-2 text-md cursor-pointer select-none"
             onClick={onCopyAddress}
           >
-            {shortenEthereumAddress(address)} <Clipboard height={15} />
+            {shortenEthereumAddress(address)} <FiClipboard height={15} />
           </button>
         </div>
       </div>
       <div className="m-4">
         <div className="flex justify-between">
           <div className="flex items-center">
-            <Link height={16} className="mr-1" /> Network
+            <FiLink height={16} className="mr-1" /> Network
           </div>
           <div>
             {networkId} {networkName}
@@ -66,7 +66,7 @@ const Account: React.FC<Props> = ({
         <div className="flex justify-between mt-2">
           <div className="flex items-center">
             {' '}
-            <DollarSign height={16} className="mr-1" /> Balance
+            <FiDollarSign height={16} className="mr-1" /> Balance
           </div>
           <div>{balance.toFixed(2)} Eth</div>
         </div>
@@ -77,7 +77,7 @@ const Account: React.FC<Props> = ({
           onClick={onDisconnect}
           variant={ButtonVariant.Secondary}
         >
-          <LogOut />
+          <FiLogOut />
           Disconnect
         </Button>
       </div>
