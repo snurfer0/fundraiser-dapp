@@ -15,6 +15,7 @@ WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
 
+RUN yarn app:typechain:generate
 RUN yarn build
 
 # Production image, copy all the files and run next
