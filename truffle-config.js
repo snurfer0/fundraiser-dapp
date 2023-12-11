@@ -4,7 +4,7 @@ require("ts-node").register({
 
 module.exports = {
   contracts_directory: './src/truffle/contracts',
-  contracts_build_directory: './src/truffle/build',
+  contracts_build_directory: './src/truffle/abi',
   migrations_directory: './src/truffle/dist/migrations',
   networks: {
     development: {
