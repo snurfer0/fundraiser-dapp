@@ -28,6 +28,7 @@
     "@tanstack/react-query": "^5.12.2",
     "@tanstack/react-query-devtools": "^5.13.3",
     "@tanstack/react-query-next-experimental": "^5.12.2",
+    "@typechain/truffle-v5": "^8.0.7",
     "@typechain/ethers-v6": "^0.5.1",
     "autoprefixer": "^10.4.16",
     "axios": "^1.6.2",
@@ -51,7 +52,6 @@
   "devDependencies": {
     "@openzeppelin/contracts": "^5.0.0",
     "@next/eslint-plugin-next": "^14.0.3",
-    "@typechain/truffle-v5": "^8.0.7",
     "@types/axios": "^0.14.0",
     "@types/chai": "^4.3.11",
     "@types/dompurify": "^3.0.4",
