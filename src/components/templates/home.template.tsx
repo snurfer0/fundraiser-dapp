@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { FiArrowRightCircle } from 'react-icons/fi';
 import IntroImage from 'public/svg/intro.svg';
 import { ButtonVariant } from 'src/enums/button.variant.enum';
 import { Button } from '../atoms';
-
 const HomeTemplate: React.FC = () => {
   return (
     <div className="hero min-h-screen">
@@ -29,11 +29,13 @@ const HomeTemplate: React.FC = () => {
             campaign in moments. Simple to support and easy to manage.
           </p>
           <div className="mt-5 mb-10 md:mb-0">
-            <Link href="/start">
-              <Button variant={ButtonVariant.Primary}>Start Fundraising</Button>
-            </Link>
             <Link href="/fundraisers" className="ml-2">
               <Button variant={ButtonVariant.Primary}>Our Fundraisers</Button>
+            </Link>
+            <Link href="/start">
+              <Button variant={ButtonVariant.Primary} className="ml-2">
+                Start Fundraising <FiArrowRightCircle size={23} />
+              </Button>
             </Link>
           </div>
         </div>
