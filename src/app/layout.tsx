@@ -22,10 +22,10 @@ export default function RootLayout({
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <body className="bg-base-200">
+      <body className="bg-base-200 min-h-full">
         <Providers>
           <NavBar navLinks={NAV_LINKS} />
-          {children}
+          <div className="min-h-full">{children}</div>
           <Toaster />
           <Footer />
         </Providers>
