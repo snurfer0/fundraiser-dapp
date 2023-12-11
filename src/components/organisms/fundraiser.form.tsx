@@ -38,6 +38,7 @@ const FundraiserForm: React.FC<Props> = ({ onSubmit }) => {
     <Formik
       enableReinitialize
       onSubmit={handleFormSubmit}
+      validateOnChange={false}
       initialValues={fundraiserSchema.cast({})}
       validationSchema={fundraiserSchema}
     >
